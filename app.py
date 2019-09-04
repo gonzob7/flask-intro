@@ -8,8 +8,9 @@ days = ['amazing','great','fast','awesome']
 
 @app.route('/compliment')
 def get_compliment():
+    name = request.args.get('name')
     compliment = choice(compliments)
-    return(f'Hello there, user! You are so {compliment}!')
+    return(f'Hello there, {name}! You are so {compliment}!')
 
 def get_horoscope():
     day = choice(days)
