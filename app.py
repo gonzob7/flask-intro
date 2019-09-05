@@ -3,8 +3,10 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-compliments = ['coolio', 'smashing', 'neato', 'fantabulous']
-days = ['amazing','great','fast','awesome']
+compliments = [
+    'awesome', 'terrific', 'fantastic', 'neato', 'fantabulous', 'wowza',
+    'oh-so-not-meh', 'brilliant', 'ducky', 'coolio', 'incredible',
+    'wonderful', 'smashing', 'lovely', 'tenacious', 'Pythonic']
 
 @app.route('/compliment')
 def get_compliment():
