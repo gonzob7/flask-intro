@@ -1,3 +1,4 @@
+import pyaztro
 from random import choice, sample
 from flask import Flask, request, render_template
 
