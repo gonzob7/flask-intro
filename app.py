@@ -22,6 +22,7 @@ def get_compliment():
     horoscope = pyaztro.Aztro(sign=horoscope_sign)
     horoscope_desc = horoscope.description
     horoscope_time = horoscope.lucky_time
+    horoscope_mood = horoscope.mood
 
 
 
@@ -30,7 +31,8 @@ def get_compliment():
         name=name,
         horoscope_name = horoscope_sign,
         horoscope_desc = horoscope_desc,
-        horoscope_time = horoscope_time)
+        horoscope_time = horoscope_time,
+        horoscope_mood = horoscope_mood)
 
 
 def get_horoscope():
