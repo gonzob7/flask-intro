@@ -16,7 +16,16 @@ def get_horoscope():
     day = choice(days)
     return(f'Your day will go {day}!')
 
-
+@app.route('/')
+def index():
+    return  """
+    <form action = '/compliment'>
+        What is your name??
+        <input type = "text" name = "name"></input>
+        <button type = "submit">Submit!</button>
+    </form>
+    """
+    
 #-------------------------#
 if __name__ == "__main__":
     app.run(debug=True)
