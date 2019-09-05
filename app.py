@@ -1,4 +1,4 @@
-from random import choice
+from random import choice, sample
 from flask import Flask, request
 
 app = Flask(__name__)
