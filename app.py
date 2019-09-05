@@ -1,5 +1,6 @@
 from random import choice, sample
-from flask import Flask, request
+from flask import Flask, request, render_template
+
 
 app = Flask(__name__)
 
@@ -11,8 +12,15 @@ compliments = [
 @app.route('/compliment')
 def get_compliment():
     name = request.args.get('name')
-    compliment = choice(compliments)
-    return(f'Hello there, {name}! You are so {compliment}!')
+    show_compliments = request.args.get('show_compliments')
+    compliments_to_show = sample(compliments, 3)
+
+    return render_template(
+        'compliments.html',
+        name=name,
+        show_compliments=show_compliments,
+        compliments=compliments_to_show)
+
 
 def get_horoscope():
     day = choice(days)
@@ -20,19 +28,8 @@ def get_horoscope():
 
 @app.route('/')
 def index():
-    return  """
-    <form action = '/compliment'>
-        What is your name??
-        <input type = "text" name = "name"></input>
-        <button type = "submit">Submit!</button>
-        <input type="checkbox" name="show_compliments"/>
-        <select name="num_compliments">
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-        </select>
-    </form>
-    """
+    return render_template('index.html')
+
 
 #-------------------------#
 if __name__ == "__main__":
