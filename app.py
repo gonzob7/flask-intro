@@ -24,8 +24,7 @@ def get_compliment():
     horoscope_time = horoscope.lucky_time
     horoscope_mood = horoscope.mood
     horoscope_color = horoscope.color
-
-
+    horoscope_num = horoscope.lucky_number
 
     return render_template(
         'compliments.html',
@@ -34,7 +33,8 @@ def get_compliment():
         horoscope_desc = horoscope_desc,
         horoscope_time = horoscope_time,
         horoscope_mood = horoscope_mood,
-        horoscope_color = horoscope_color)
+        horoscope_color = horoscope_color,
+        horoscope_num = horoscope_num)
 
 
 def get_horoscope():
