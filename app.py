@@ -23,6 +23,7 @@ def get_compliment():
     horoscope_desc = horoscope.description
     horoscope_time = horoscope.lucky_time
     horoscope_mood = horoscope.mood
+    horoscope_color = horoscope.color
 
 
 
@@ -32,7 +33,8 @@ def get_compliment():
         horoscope_name = horoscope_sign,
         horoscope_desc = horoscope_desc,
         horoscope_time = horoscope_time,
-        horoscope_mood = horoscope_mood)
+        horoscope_mood = horoscope_mood,
+        horoscope_color = horoscope_color)
 
 
 def get_horoscope():
