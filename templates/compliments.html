@@ -10,7 +10,7 @@
           You are so:
           <ul>
               {% for compliment in compliments %}
-                  <li>{{ compliment }}</li>
+                  {% include 'compliment.html' %}
               {% endfor %}
           </ul>
       {% else %}
