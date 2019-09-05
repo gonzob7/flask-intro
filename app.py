@@ -12,8 +12,9 @@ compliments = [
 @app.route('/compliment')
 def get_compliment():
     name = request.args.get('name')
+    num_compliments = int(request.args.get('num_compliments'))
     show_compliments = request.args.get('show_compliments')
-    compliments_to_show = sample(compliments, 3)
+    compliments_to_show = sample(compliments, num_compliments)
 
     return render_template(
         'compliments.html',
