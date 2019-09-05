@@ -18,15 +18,15 @@ def index():
 @app.route('/compliment')
 def get_compliment():
     name = request.args.get('name')
-    horoscope_sign = int(request.args.get('horoscope_type'))
-    show_compliments = request.args.get('show_compliments')
-    compliments_to_show = sample(compliments, horoscope_sign)
+    horoscope_sign = request.args.get('horoscope_type')
+    horoscope = pyaztro.Aztro(sign=horoscope_sign)
+    horoscope_desc = horoscope.description
 
     return render_template(
         'compliments.html',
         name=name,
-        show_compliments=show_compliments,
-        compliments=compliments_to_show)
+        horoscope_name = horoscope_sign,
+        horoscope_desc = horoscope_desc)
 
 
 def get_horoscope():

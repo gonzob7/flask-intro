@@ -3,15 +3,9 @@
 {% block body %}
     <p>
         Hello there, {{name}}!
-        {% if show_compliments %}
-            You are so:
+            Your horoscope is {{horoscope_name}}:
             <ul>
-                {% for compliment in compliments %}
-                    <li>{{ compliment }}</li>
-                {% endfor %}
+                    <li>{{ horoscope_desc }}</li>
             </ul>
-        {% else %}
-            Have a nice day!
-        {% endif %}
     </p>
 {% endblock %}
