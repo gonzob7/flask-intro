@@ -9,6 +9,11 @@ compliments = [
     'oh-so-not-meh', 'brilliant', 'ducky', 'coolio', 'incredible',
     'wonderful', 'smashing', 'lovely', 'tenacious', 'Pythonic']
 
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 @app.route('/compliment')
 def get_compliment():
     name = request.args.get('name')
@@ -27,9 +32,6 @@ def get_horoscope():
     day = choice(days)
     return(f'Your day will go {day}!')
 
-@app.route('/')
-def index():
-    return render_template('index.html')
 
 
 #-------------------------#

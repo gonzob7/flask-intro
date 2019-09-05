@@ -1,20 +1,17 @@
-<p>
-  {% extends 'base.html' %}
+{% extends 'base.html' %}
 
-  {% block title %}
-      Receive Compliments!
-  {% endblock %}
-
-  {% block content %}
-      {% if show_compliments %}
-          You are so:
-          <ul>
-              {% for compliment in compliments %}
-                  {% include 'compliment.html' %}
-              {% endfor %}
-          </ul>
-      {% else %}
-          Have a nice day!
-      {% endif %}
-  {% endblock %}
-</p>
+{% block body %}
+    <p>
+        Hello there, {{name}}!
+        {% if show_compliments %}
+            You are so:
+            <ul>
+                {% for compliment in compliments %}
+                    <li>{{ compliment }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            Have a nice day!
+        {% endif %}
+    </p>
+{% endblock %}
