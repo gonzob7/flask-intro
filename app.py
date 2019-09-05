@@ -21,12 +21,16 @@ def get_compliment():
     horoscope_sign = request.args.get('horoscope_type')
     horoscope = pyaztro.Aztro(sign=horoscope_sign)
     horoscope_desc = horoscope.description
+    horoscope_time = horoscope.lucky_time
+
+
 
     return render_template(
         'compliments.html',
         name=name,
         horoscope_name = horoscope_sign,
-        horoscope_desc = horoscope_desc)
+        horoscope_desc = horoscope_desc,
+        horoscope_time = horoscope_time)
 
 
 def get_horoscope():
