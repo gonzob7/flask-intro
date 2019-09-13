@@ -40,10 +40,3 @@ def get_compliment():
 def get_horoscope():
     day = choice(days)
     return(f'Your day will go {day}!')
-
-
-
-#-------------------------#
-if __name__ == "__main__":
-    app.run(debug=True)
-#-------------------------#
